@@ -1,0 +1,18 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="12" y="16" width="104" height="96" rx="22" fill="#774CFA"/>
+  <rect x="24" y="32" width="80" height="64" rx="9" fill="#FFF"/>
+  <rect x="40" y="56" width="48" height="10" rx="5" fill="#774CFA"/>
+  <rect x="40" y="76" width="36" height="8" rx="4" fill="#D9B11A"/>
+  <text
+    x="50%" y="106"
+    text-anchor="middle"
+    font-family="Arial, sans-serif"
+    font-size="32"
+    font-weight="bold"
+    letter-spacing="2"
+    fill="#fff"
+    stroke="#39118c"
+    stroke-width="3"
+    paint-order="stroke fill"
+    >Library</text>
+</svg>
