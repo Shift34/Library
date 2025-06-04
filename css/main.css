@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'TitleFont';
+  src: url('fonts/B612-Regular.ttf') format('opentype');
+  font-weight: normal; font-style: normal;
+}
+body {
+  margin: 0; font-family: 'Inter', 'Open Sans', 'Roboto', sans-serif;
+  background: #fff; color: #212133; min-height: 100vh; display: flex; flex-direction: column;
+}
+.logo {
+  font-family: 'TitleFont', sans-serif; font-size: 1.7rem; color: #774cfa;
+  font-weight: 700; letter-spacing: 1px; margin-left: 10px; display:inline-block;
+}
+.logo-img {
+  height: 64px;
+  margin-top: 0;
+  vertical-align: middle;
+}
+header { padding: 18px 16px 10px; display: flex; align-items: center; justify-content: flex-start; background: #fff; position: sticky; top: 0; z-index: 2;}
+nav { margin-left:auto; }
+nav button, #add-btn {
+  background: #4371fa; color: #fff; border: none; border-radius: 18px; padding: 8px 15px;
+  font-size: 1rem; cursor: pointer; transition: background .2s; box-shadow: 0 2px 10px #0001;
+}
+nav button:hover, #add-btn:hover { background: #2e54c8; }
+.books-list {
+  display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); padding: 18px 12px 90px;
+}
+.book-card {
+  background: #f3f3f6; border-radius: 18px; box-shadow: 0 2px 10px #0001; padding: 16px 16px 12px;
+  opacity: 0; animation: fadeIn .7s ease forwards;
+}
+@keyframes fadeIn { to { opacity: 1; } }
+.book-title { font-weight: 600; font-size: 1.18rem; }
+.book-author { color: #555; margin: 6px 0; }
+.book-genre { font-size: .95rem; color: #6b37a2; }
+.book-status { font-size: .97rem; margin: 5px 0 11px; color: #333; }
+.book-year { font-size: .97rem; color: #3b3b3b; margin-bottom:10px; }
+.card-actions button {
+  margin: 0 6px 6px 0; padding: 5px 13px; border-radius: 18px; border: none; font-size: .98rem;
+  cursor: pointer; background: #4371fa; color: #fff; transition: background .2s;
+}
+.card-actions button:hover { background: #774cfa; }
+.card-actions .delete { background: #ff4253; }
+.card-actions .delete:hover { background: #a1202e; }
+.fixed-add-btn {
+  position: fixed; right: 14px; bottom: 18px; background: #4371fa; color: #fff; font-size: 1.18rem;
+  border-radius: 100px; border: none; padding: 16px 32px; font-weight: 600; cursor: pointer; box-shadow: 0 2px 10px #0001; transition: background .2s; z-index: 10;
+}
+.fixed-add-btn:hover { background: #2e54c8; }
+.modal-bg {
+  display: none; position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; background: #0005;
+  z-index: 99; align-items: center; justify-content: center;
+}
+.modal {
+  background: #fff; border-radius: 18px; box-shadow: 0 2px 10px #0001; padding: 22px 16px 18px;
+  min-width: 290px; max-width: 97vw; animation: fadeIn .25s;
+}
+.modal h2 { margin-top: 0; font-size: 1.18rem; }
+.modal input, .modal select, .modal textarea {
+  width: 100%; margin: 5px 0 13px; padding: 8px; border-radius: 10px; border: 1px solid #b8b8b8;
+  font-size: 1rem; font-family: inherit; box-sizing: border-box;
+}
+.modal textarea { min-height: 66px; }
+.modal .actions { display: flex; justify-content: flex-end; gap: 10px; }
+.modal .actions button { min-width: 80px; }
+.reviews-list { margin: 10px 0 0; }
+.review-card { background: #f3f3f6; border-radius: 13px; margin-bottom: 10px; padding: 10px 10px 7px; box-shadow: 0 2px 10px #0001; }
+.review-header { display: flex; justify-content: space-between; }
+.review-user { font-weight: 600; }
+.review-rating { color: #d9b11a; }
+.review-date { color: #888; font-size: .94em; }
+.notif {
+  position: fixed; top: 18px; left: 50%; transform: translateX(-50%); background: #774cfa; color: #fff; padding: 10px 20px;
+  border-radius: 22px; box-shadow: 0 2px 10px #0001; z-index: 200; opacity: 0; pointer-events: none; font-size: 1.04rem;
+  animation: fadeInNotif .35s forwards, fadeOutNotif .7s 2.2s forwards;
+}
+@keyframes fadeInNotif { to { opacity: 1; } }
+@keyframes fadeOutNotif { to { opacity: 0; } }
+footer { margin-top:auto;padding:25px 10px 16px;text-align:center;color:#aaa;font-size:.98rem }
+footer a { color: #888; }
+@media (max-width:600px) {
+  .books-list { grid-template-columns: 1fr; }
+  .modal { min-width: 90vw; }
+}
